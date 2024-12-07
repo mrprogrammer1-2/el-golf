@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+Arabic:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors */
+    --color-soft-blush: #FFE4E1;
+    --color-warm-ivory: #FFFAF0;
+    --color-dusty-rose: #C96567;
+    --color-soft-gold: #D4AF37;
+  
+    /* Accent Colors */
+    --color-light-taupe: #9F8170;
+    --color-warm-gray: #D3D3D3;
+  
+    /* Text Colors */
+    --text-primary: var(--color-light-taupe);
+    --text-heading: var(--color-dusty-rose);
+    --text-subheading: var(--color-soft-gold);
+  
+    /* Background Colors */
+    --bg-primary: var(--color-warm-ivory);
+    --bg-secondary: var(--color-warm-gray);
+  
+    /* Button Colors */
+    --btn-bg: var(--color-soft-blush);
+    --btn-text: #5D4037;
+    --btn-hover: var(--color-soft-gold);
+
+    /* =========== */
+    --font-amiri: "Amiri", serif;
+    --font-noto: "Noto Sans Arabic", sans-serif;
+  }
+  
+  /* Example Usage */
+body {
+    background-color: var(--bg-primary);
+    /* color: var(--text-primary); */
+    overflow-x: hidden;
+}
+  
+h1 {
+    color: var(--text-heading);
+}
+  
+.button {
+    display: inline-block;
+    background-color: var(--color-warm-ivory);
+    color: var(--btn-text);
+    border: none;
+    outline: none;
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: var(--font-noto);
+    margin-top: 1rem;
+}
+  
+.button:hover {
+    background-color: var(--btn-hover);
+}
+
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+@media (min-width: 64em) {
+    .container {
+        margin-inline: auto;
+    }
+}
+
+.section {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    font-family: "Amiri", serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+p {
+    font-family: "Noto Sans Arabic", sans-serif;
+    line-height: 1.5;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-dusty-rose);
+}
+
+.main {
+    position: relative;
+    top: 4.6875rem;
+}
+
+/* =========================== */
+.header {
+    position: fixed;
+    background-color: var(--color-warm-ivory);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.6875rem;
+}
+
+@media (max-width: 64em) {
+    .menu-container {
+        position: fixed;
+        left: 0;
+        top: -100%;
+        padding-block: 3rem;
+        width: 100%;
+        transition: 0.5s;
+        background-color: var(--color-soft-blush);
+    }
+    
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+
+.menu li a {
+    position: relative;
+    padding: .25rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-light-taupe);
+    transition: 0.3s;
+    &:hover {
+        color: var(--color-dusty-rose);
+        &::after {
+            width: 100%;
+        }
+    }
+    &.active {
+        color: var(--color-dusty-rose);
+        &::after {
+            width: 100%;
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: var(--color-dusty-rose);
+        height: 3px;
+        width: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -0.75rem;
+        transition: 0.3s;
+    }
+}
+
+.open-btn,
+.close-btn {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+}
+
+@media (min-width: 64em) {
+    .menu {
+        flex-direction: row;
+    }
+    .open-btn,
+    .close-btn {
+        display: none;
+    }
+}
+
+.show {
+    top: 0;
+}
+
+/* ============ HERO ============ */
+
+.hero {
+    background-color: var(--color-soft-blush);
+    padding-bottom: 0;
+}
+
+.hero-container {
+    display: grid;
+    justify-content: center;
+    gap: 2rem 4rem;
+    position: relative;
+}
+
+.hero-image {
+    justify-self: center;
+    position: relative;
+    bottom: -4px;
+}
+
+.hero-image img {
+    width: 21.875rem;
+    filter: drop-shadow(17px -1px 21px rgba(0, 0, 0, 0.4))
+}
+
+.hero .intro {
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--color-dusty-rose);
+    font-size: 2.25rem;
+    margin-bottom: .75rem;
+}
+
+@media (min-width: 64em) {
+    .hero {
+        margin: 0 1.5rem;
+        border-radius: 2rem;
+        height: 60vh;
+    }
+    .hero-container {
+        grid-template-columns: 28.125rem 1fr;
+        padding-inline: 2rem;
+    }
+    .hero .intro {
+        padding-top: 1rem;
+        text-align: right;
+    }
+    .hero-image {
+        position: absolute;
+        bottom: -4.75rem;
+        left: -1.875rem;
+    }
+
+    .hero-image img {
+        width: 35.5rem;
+    }
+}
+
+/* =========== FEATURES =========== */
+.features {
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: 18.75rem;
+    justify-content: center;
+    gap: 2rem;
+}
+
+@media (min-width: 40em) {
+    .features-container {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+}
+@media (min-width: 40em) {
+    .features-container {
+        column-gap: 2rem;
+    }
+}
+
+.features .card {
+    background-color: var(--color-soft-blush);
+    padding: .5rem .5rem 1.25rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(159, 129, 112, 0.1);
+}
+
+.features .card:hover img {
+    transform: scale(1.1);
+    filter: brightness(105%);
+}
+
+.features .card:nth-child(1) {
+    background-color: #a5ffa57d;
+    background-image: url('images/man-medical-office-physiotherapist-is-rehabilitating-back.jpg');
+    background-size: cover;
+    h3 {
+        padding-top: 18rem;
+    }
+}
+.features .card:nth-child(2) {
+    background-color: #ffffb1cf
+}
+.features .card:nth-child(3) {
+    background-color: #ffc9659c;
+}
+
+@media (min-width: 64em) {
+    .features .card {
+        padding: 1rem 1rem 3.25rem;
+    }
+}
+
+.features .card .image {
+    overflow: hidden;
+    border-radius: .75rem;
+    max-height: 76%;
+    margin-bottom: 1.5rem;
+}
+
+.features .card img {
+    border-radius: .75rem;
+    object-fit: cover;
+    transition: 0.3s;
+    max-height: 100%;
+}
+
+.features .card h3 {
+    color: var(--btn-text);
+    margin-bottom: .75rem;
+}
+
+
+.features .card p {
+    color: var(--color-light-taupe);
+}
