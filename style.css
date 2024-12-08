@@ -39,7 +39,6 @@
   /* Example Usage */
 body {
     background-color: var(--bg-primary);
-    /* color: var(--text-primary); */
     overflow-x: hidden;
 }
   
@@ -79,6 +78,26 @@ h1 {
 .section {
     padding-top: 5rem;
     padding-bottom: 4rem;
+    color: var(--color-dusty-rose);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+}
+
+@media (min-width: 40em) {
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.75rem;
+    }
+}
+@media (min-width: 64em) {
+    .section-title {
+        font-size: 3rem;
+        margin-bottom: 2.75rem;
+    }
 }
 
 a {
@@ -112,17 +131,22 @@ p {
 
 .main {
     position: relative;
-    top: 4.6875rem;
+    top: 4.875rem;
 }
 
 /* =========================== */
 .header {
     position: fixed;
-    background-color: var(--color-warm-ivory);
+    background-color: var(--bg-primary);
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
+    transition: 0.3s;
+}
+
+.show-shadow {
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.4);
 }
 
 .nav-container {
@@ -222,6 +246,7 @@ p {
     display: grid;
     justify-content: center;
     gap: 2rem 4rem;
+    padding-top: 5rem;
     position: relative;
 }
 
@@ -255,6 +280,7 @@ p {
     .hero-container {
         grid-template-columns: 28.125rem 1fr;
         padding-inline: 2rem;
+        height: 100%;
     }
     .hero .intro {
         padding-top: 1rem;
@@ -262,7 +288,7 @@ p {
     }
     .hero-image {
         position: absolute;
-        bottom: -4.75rem;
+        bottom: 0;
         left: -1.875rem;
     }
 
@@ -311,14 +337,11 @@ p {
 
 .features .card:nth-child(1) {
     background-color: #a5ffa57d;
-    background-image: url('images/man-medical-office-physiotherapist-is-rehabilitating-back.jpg');
-    background-size: cover;
-    h3 {
-        padding-top: 18rem;
-    }
+    /* background-image: url('images/therapy.jpg'); */
+    transition: 0.3s;
 }
 .features .card:nth-child(2) {
-    background-color: #ffffb1cf
+    background-color: #ffffb1cf;
 }
 .features .card:nth-child(3) {
     background-color: #ffc9659c;
@@ -352,4 +375,334 @@ p {
 
 .features .card p {
     color: var(--color-light-taupe);
+}
+/* ============= about ============== */
+.about {
+    background-color: var(--color-dusty-rose);
+    margin-top: 3rem;
+}
+
+.about-container {
+    position: relative;
+    display: grid;
+    padding-top: 10rem;
+}
+.about-container .about-text {
+    text-align: center;
+    padding: 1rem;
+    padding-right: 1.5rem;
+    background-color: var(--color-soft-blush);
+    color: #5D4037;
+    position: absolute;
+    top: -7rem;
+}
+
+.about-container .about-image {
+    transform: translateY(5.625rem);
+}
+
+
+@media (min-width: 40em) {
+    .about-container {
+        padding-top: 2rem;
+    }
+    .about-container .about-image {
+        transform: translateY(7.375rem);
+    }
+}
+@media (min-width: 64em) {
+    .about-container {
+        grid-template-columns: 583px 500px;
+    }
+    .about-container .about-image {
+        transform: translateY(6.25rem);
+    }
+    .about-container .about-text {
+        position: relative;
+        right: -117px;
+        top: -159px;
+        text-align: right;
+    }
+    .about-container .about-text p {
+        padding-inline: 1.5rem;
+        margin-top: 4rem;
+    }
+}
+
+/* ============= popular =========== */
+.popular {
+    background-color: var(--bg-primary);
+}
+
+.popular-container {
+    display: grid;
+    gap: 2rem .75rem;
+}
+
+@media (min-width: 40em) {
+    .popular-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 64em) {
+    .popular-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.popular-container .service {
+    background-color: var(--color-light-taupe);
+    padding: 1rem;
+}
+
+
+.popular-container .service .service-title {
+    color: #fff;
+    padding-top: .5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+
+.popular-container .service .service-description {
+    margin-block: .75rem;
+    color: var(--color-warm-ivory);
+}
+
+.popular-container .service .service-price {
+    color: #000;
+    font-family: var(--font-amiri);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.popular-container .service a {
+    display: inline-block;
+    color: #fff;
+    padding-top: .5rem;
+    font-weight: 500;
+    transition: 0.3s;
+    &:hover {
+        color: #444;
+    }
+    &:hover i {
+        animation: move 0.5s backwards infinite ease-in-out;
+    }
+}
+
+@keyframes move {
+    from {
+        padding-right: 0;
+    }
+    to {
+        padding-right: 5px;
+    }
+}
+
+/* ============== services =============== */
+.services {
+    background-color: var(--color-soft-blush);
+}
+
+.services-container {
+    text-align: right;
+}
+
+.services-container .service-title {
+    color: var(--title-color);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-amiri);
+}
+
+.services-container .row:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+.services-container .row-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 1.5rem 1.5rem;
+}
+
+@media (min-width: 64em) {
+    .services-container .row-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.services-container .card {
+    padding-inline: .5rem;
+    background-color: var(--color-warm-ivory);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    text-align: center;
+    border: 1px solid var(--color-dusty-rose);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.services-container .card .card-title {
+    margin-bottom: .5rem;
+    color: var(--btn-text);
+    font-family: var(--font-noto);
+}
+
+/* ============ devices ============= */
+
+.devices-container {
+    display: grid;
+    grid-template-columns: 200px;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+}
+
+@media (min-width: 40em) {
+    .devices-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 64em) {
+    .devices-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.devices-container .card {
+    background-color: var(--color-soft-blush);
+    padding: 2rem 1.5rem;
+}
+
+.devices-container .card-title {
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-soft-gold);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.devices-container .description {
+    margin-block: 1rem;
+    text-align: center;
+    font-weight: 500;
+    color: var(--color-light-taupe);
+}
+
+.devices-container .card a {
+    color: var(--btn-text);
+}
+
+.devices .more {
+    display: block;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.devices .more a {
+    padding: .5rem .25rem;
+    background-color: var(--container-color);
+    color: var(--color-soft-gold);
+    font-size: 1.5rem;
+}
+/* =========== footer =========== */
+.footer {
+    background-color: var(--color-dusty-rose);
+    direction: ltr;
+    text-align: center;
+}
+@media (min-width: 40em) {
+    .footer {
+        text-align: right;
+    }
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    padding-block: 4rem;
+    justify-content: center;
+}
+
+.footer-container .col {
+    margin-bottom: 1.5rem;
+}
+
+.footer-social {
+    margin-block: 1rem;
+    padding-right: 2rem;
+}
+
+.footer-social a {
+    font-size: 2rem;
+    color: var(--btn-text);
+    transition: 0.3s;
+    &:hover {
+        color: var(--color-soft-gold);
+    }
+}
+
+.footer-container .col:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+.footer-container .col:last-child a {
+    color: #000;
+    font-family: var(--font-noto);
+    font-size: 1.2rem;
+    transition: 0.3s;
+    &:hover {
+        padding-right: 4px;
+    }
+}
+
+.footer-container .logo {
+    color: #000;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: .75rem;
+}
+
+.footer-container p {
+    font-size: 1.24rem;
+    font-family: var(--font-noto);
+}
+
+.footer .location {
+    font-family: var(--font-noto);
+    line-height: 1.5;
+    margin-bottom: .75rem;
+}
+.footer .hours {
+    font-family: var(--font-noto);
+    line-height: 1.5;
+    margin-bottom: .75rem;
+}
+
+.footer-img {
+    width: 75px;
+    height: 80px;
+    border: 4px solid var(--color-soft-blush);
+}
+
+
+/* ============== services page ============= */
+.hero {
+    background-image: url('/images/top-view-healthy-life-written-notepad-round-platter-cut-vegetables-white-surface.jpg');
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    width: 100%;
+    border-radius: initial;
+    margin: 0;
+}
+.hero .services-hero {
 }

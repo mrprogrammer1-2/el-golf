@@ -9,3 +9,17 @@ openBtn.addEventListener("click", ()=> {
 closeBtn.addEventListener("click", ()=> {
     menu.classList.remove("show")
 })
+
+// ============ header shadow ============
+
+const showShadow = ()=> {
+    const header = document.getElementById("header")
+
+    if (window.scrollY > 50) {
+        header.classList.add("show-shadow")
+    } else {
+        header.classList.remove("show-shadow")
+    }
+}
+
+window.addEventListener("scroll", showShadow)
