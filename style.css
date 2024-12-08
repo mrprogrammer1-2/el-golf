@@ -532,6 +532,7 @@ p {
 }
 
 .services-container .card {
+    position: relative;
     padding-inline: .5rem;
     background-color: var(--color-warm-ivory);
     display: flex;
@@ -543,10 +544,24 @@ p {
     border: 1px solid var(--color-dusty-rose);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
     transition: 0.3s;
+    cursor: pointer;
     &:hover {
         transform: scale(1.05);
         box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.4);
     }
+    &:hover::before {
+        width: 100%;
+    }
+}
+.services-container .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: var(--color-dusty-rose);
+    transition: width 0.3s;
 }
 
 .services-container .card .card-title {
@@ -687,6 +702,7 @@ p {
     margin-bottom: .75rem;
 }
 
+
 .footer-img {
     width: 75px;
     height: 80px;
@@ -695,14 +711,79 @@ p {
 
 
 /* ============== services page ============= */
-.hero {
-    background-image: url('/images/top-view-healthy-life-written-notepad-round-platter-cut-vegetables-white-surface.jpg');
-    background-position: center;
+.services-hero {
+    background-image: url('/images/services-hero.jpg');
+    background-position: top 58% center;
     background-size: cover;
     background-color: transparent;
     width: 100%;
     border-radius: initial;
     margin: 0;
+    height: 60vh;
 }
-.hero .services-hero {
+
+.services-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.ser-wrapper:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+
+.ser-wrapper .service-header{
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.ser-wrapper .description {
+    padding-right: 3rem;
+    line-height: 2;
+    max-width: 90vw;
+    font-family: var(--font-noto);
+}
+
+.ser-wrapper .description ul {
+    list-style: initial;
+}
+@media (min-width: 64em) {
+    .ser-wrapper .description {
+        padding-right: 12rem;
+        max-width: 75vw;
+        font-size: 1.25rem;
+    }
+}
+
+.service-header {
+    text-align: center;
+    color: #2c3e50;
+    border-bottom: 3px solid var(--color-dusty-rose);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.ser-intro {
+    margin-bottom: 1rem;
+}
+
+.service-section-title {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    margin-right: -1.5rem;
+    margin-top: .75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.highlight {
+    background-color: #f9f9f9;
+    border-right: 4px solid var(--color-dusty-rose);
+    padding: 15px;
+    margin: 20px 0;
+    margin-right: -1.5rem;
 }

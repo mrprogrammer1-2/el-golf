@@ -23,3 +23,9 @@ const showShadow = ()=> {
 }
 
 window.addEventListener("scroll", showShadow)
+
+// ===============
+
+function navigateservices(serveId) {
+    window.location.href = `nutrition.html#${serveId}`
+}
