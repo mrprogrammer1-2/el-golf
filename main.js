@@ -27,5 +27,19 @@ window.addEventListener("scroll", showShadow)
 // ===============
 
 function navigateservices(serveId) {
-    window.location.href = `nutrition.html#${serveId}`
+    window.location.href = `services.html#${serveId}`
 }
+
+document.addEventListener("DOMContentLoaded", ()=> {
+    if (window.location.hash) {
+        const sectionId = window.location.hash.substring(1);
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+            section.scrollIntoView({
+                behavior: 'instant',
+                block: 'start'
+            })
+        }
+    }
+})
