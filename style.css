@@ -88,18 +88,18 @@ h1 {
 .section-title {
     text-align: center;
     margin-bottom: 1.5rem;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 @media (min-width: 40em) {
     .section-title {
-        font-size: 2rem;
+        font-size: 3rem;
         margin-bottom: 1.75rem;
     }
 }
 @media (min-width: 64em) {
     .section-title {
-        font-size: 3rem;
+        font-size: 4rem;
         margin-bottom: 2.75rem;
     }
 }
@@ -389,7 +389,7 @@ p {
 .about-container {
     position: relative;
     display: grid;
-    padding-top: 10rem;
+    padding-top: 17rem;
 }
 .about-container .about-text {
     text-align: center;
@@ -574,6 +574,18 @@ p {
     margin-bottom: .5rem;
     color: var(--btn-text);
     font-family: var(--font-noto);
+    font-size: 1rem;
+}
+
+@media (min-width: 40em) {
+    .services-container .card .card-title {
+        font-size: 1.25rem;
+    }
+}
+@media (min-width: 64em) {
+    .services-container .card .card-title {
+        font-size: 1.5rem;
+    }
 }
 
 /* ============ devices ============= */
