@@ -637,12 +637,13 @@ p {
     color: var(--color-light-taupe);
 }
 
-.devices-container .card a {
+.devices-container .card .more-details {
     color: var(--btn-text);
     display: inline-block;
     position: absolute;
     bottom: 2rem;
     right: 1rem;
+    cursor: pointer;
     &:hover i {
         animation: move 0.5s infinite ease-in-out;
     }
