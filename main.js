@@ -29,6 +29,9 @@ window.addEventListener("scroll", showShadow)
 function navigateservices(serveId) {
     window.location.href = `services.html#${serveId}`
 }
+function navigatedevices(devId) {
+    window.location.href = `devices.html#${devId}`
+}
 
 document.addEventListener("DOMContentLoaded", ()=> {
     if (window.location.hash) {

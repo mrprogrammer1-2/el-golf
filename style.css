@@ -10,7 +10,8 @@
     /* Primary Colors */
     --color-soft-blush: #FFE4E1;
     --color-warm-ivory: #FFFAF0;
-    --color-dusty-rose: #C96567;
+    /* --color-dusty-rose: #C96567; */
+    --color-dusty-rose: #ec8d06a8;
     --color-soft-gold: #D4AF37;
   
     /* Accent Colors */
@@ -604,16 +605,24 @@ p {
 }
 @media (min-width: 64em) {
     .devices-container {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 .devices-container .card {
+    position: relative;
     background-color: var(--color-soft-blush);
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.devices-container .card img {
+    height: 17.875rem;
+    width: 16.875rem;
+    object-fit: cover;
 }
 
 .devices-container .card-title {
+    margin-block: 1.5rem 1rem;
     text-align: center;
     font-weight: 700;
     color: var(--color-soft-gold);
@@ -630,12 +639,26 @@ p {
 
 .devices-container .card a {
     color: var(--btn-text);
+    display: inline-block;
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    &:hover i {
+        animation: move 0.5s infinite ease-in-out;
+    }
 }
 
 .devices .more {
     display: block;
     margin-top: 2rem;
     text-align: center;
+    a:hover {
+        transition: 0.3s;
+        color: #caad4b;
+        i {
+            animation: move 0.5s infinite ease-in-out;
+        }
+    }
 }
 
 .devices .more a {
@@ -756,39 +779,40 @@ p {
     margin-bottom: 3rem;
 }
 
-.ser-wrapper {
+.ser-wrapper, .device {
     padding-top: 7rem;
 }
 
-
-
-
-.ser-wrapper .service-header{
+.ser-wrapper .service-header,
+.device .device-name{
     font-weight: 600;
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
     padding-bottom: 2rem;
 }
 
-.ser-wrapper .description {
+.ser-wrapper .description,
+.device .description {
     padding-right: 3rem;
     line-height: 2;
     max-width: 90vw;
     font-family: var(--font-noto);
 }
 
-.ser-wrapper .description ul {
+.ser-wrapper .description ul,
+.device .description ul {
     list-style: initial;
 }
 @media (min-width: 64em) {
-    .ser-wrapper .description {
+    .ser-wrapper .description,
+    .device .description  {
         padding-right: 12rem;
         max-width: 75vw;
         font-size: 1.25rem;
     }
 }
 
-.service-header {
+.service-header, .device-name {
     text-align: center;
     color: #2c3e50;
     border-bottom: 3px solid var(--color-dusty-rose);
@@ -800,7 +824,8 @@ p {
     margin-bottom: 1rem;
 }
 
-.ser-wrapper h4 {
+.ser-wrapper h4,
+.device h4 {
     background-color: white;
     border-radius: 10px;
     padding: 25px;
@@ -833,4 +858,36 @@ p {
     border-radius: initial;
     margin: 0;
     height: 60vh;
+}
+
+.main-devices-container .device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.main-devices-container .device .image img{
+    margin-bottom: 2rem;
+    height: 27rem;
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid var(--color-dusty-rose);
+}
+
+@media (min-width: 64em) {
+    .main-devices-container .device {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+    .main-devices-container .device .image {
+        margin-top: 4rem;
+        order: 2;
+    }
+    .main-devices-container .device .image img{
+        margin-bottom: 0;
+        height: 32rem;
+    }
+    
 }
