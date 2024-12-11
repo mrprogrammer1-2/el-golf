@@ -69,6 +69,21 @@ h1 {
     background-color: var(--btn-hover);
 }
 
+#up {
+    display: none;
+    border: none;
+    padding: 5px;
+    background-color: var(--color-soft-gold);
+    color: white;
+    font-weight: bold;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100;
+}
+
 .container {
     max-width: 1120px;
     margin-inline: 1.5rem;
