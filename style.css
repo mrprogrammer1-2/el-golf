@@ -149,11 +149,12 @@ p {
     font-weight: 500;
     color: var(--color-dusty-rose);
     span {
+        display: inline;
         left: 50%;
         transform: translateX(-50%);
         position: absolute;
         font-size: 1.4rem;
-        bottom: -15px;
+        bottom: -1rem;
     }
 }
 
