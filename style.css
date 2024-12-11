@@ -129,9 +129,17 @@ p {
 }
 
 .logo {
+    position: relative;
     font-size: 2rem;
     font-weight: 500;
     color: var(--color-dusty-rose);
+    span {
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        font-size: 1.4rem;
+        bottom: -15px;
+    }
 }
 
 .main {
@@ -274,6 +282,7 @@ p {
     color: var(--color-dusty-rose);
     font-size: 2.25rem;
     margin-bottom: .75rem;
+    line-height: 1.7;
 }
 
 @media (min-width: 64em) {
@@ -891,4 +900,169 @@ p {
         height: 32rem;
     }
     
+}
+
+/* ========= prices page =========== */
+.pricing-page {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.page-title {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h3 {
+    color: #444;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-card li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #8a5000a9;
+}
+@media (min-width: 40em) {
+    .pricing-card li {
+        font-size: 1.25rem;
+    }
+}
+.multi-price {
+    align-items: center;
+}
+
+.pricing-card li div {
+    gap: .25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-note {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #333;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+.prices-hero {
+    background-color: var(--color-dusty-rose);
+}
+
+.prices-hero h1 {
+    color: var(--color-warm-ivory);
+}
+
+/* =========== contact page ============ */
+.contact {
+    position: relative;
+}
+@media (min-width: 40em) {
+    .contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding-inline: 1.5rem;
+    }
+}
+
+.contact .card {
+    background-color: #fff;
+    padding: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+    i {
+        color: var(--btn-text);
+        font-size: 1.5rem;
+    }
+    h3 {
+        margin-block: .75rem;
+    }
+}
+
+@media (min-width: 40em) {
+    .contact .card {
+        width: 50%;
+        height: 14.06rem;
+    }
+}
+
+.contact .contact-number,
+.contact .social-links {
+    padding-top: .75rem;
+}
+
+
+.contact-hero {
+    background-color: var(--color-light-taupe);
+}
+
+@media (min-width: 64em) {
+
+    .contact-container .hero-image {
+        position: relative;
+    }
+    .contact-container .hero-image img {
+        width: 25rem;
+    }
 }
