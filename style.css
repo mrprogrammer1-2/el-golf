@@ -148,13 +148,14 @@ p {
     font-size: 2rem;
     font-weight: 500;
     color: var(--color-dusty-rose);
-    span {
-        display: inline;
-        left: 50%;
-        transform: translateX(-50%);
-        position: absolute;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span:nth-child(2) {
         font-size: 1.4rem;
-        bottom: -1rem;
+        margin-top: -.5rem;
+        color: var(--text-primary);
     }
 }
 
@@ -715,11 +716,11 @@ p {
 
 .footer-container .col {
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .footer-social {
-    margin-block: 1rem;
-    padding-right: 2rem;
+    margin-block: .5rem;
 }
 
 .footer-social a {
@@ -785,6 +786,14 @@ p {
 .credits a {
     color: #000;
     font-weight: 600;
+}
+
+.footer .made {
+    text-align: center;
+    padding-block: .75rem;
+    span {
+        display: block;
+    }
 }
 
 /* ============== services page ============= */
