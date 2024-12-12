@@ -145,7 +145,7 @@ p {
 
 .logo {
     position: relative;
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 500;
     color: var(--color-dusty-rose);
     display: inline-flex;
@@ -153,9 +153,19 @@ p {
     justify-content: center;
     align-items: center;
     span:nth-child(2) {
-        font-size: 1.4rem;
+        font-size: .85rem;
         margin-top: -.5rem;
         color: var(--text-primary);
+    }
+}
+
+@media (min-width: 40em) {
+    .logo {
+        font-size: 2rem;
+        span:nth-child(2) {
+            font-size: 1.4rem;
+            margin-top: -.5rem;;
+        }
     }
 }
 
